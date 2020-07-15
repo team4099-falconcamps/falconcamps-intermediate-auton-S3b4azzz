@@ -13,7 +13,7 @@ public class RobotContainer {
 
     }
 
-    public Command getAutonomousCommand(ShootCommand) {
-        return null;
+    public Command getAutonomousCommand() {
+        return new ShootCommand(shooter);
     }
 }
