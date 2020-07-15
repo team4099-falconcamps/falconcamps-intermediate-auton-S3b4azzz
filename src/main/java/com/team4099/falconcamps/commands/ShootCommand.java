@@ -9,7 +9,8 @@ public class ShootCommand extends CommandBase {
     public ShootCommand(Shooter shooter) {
         this.shooter = shooter;
     }
-
+ public Command getAutonomousCommand(ShootCommand) {
+        return new ShootCommand(shooter);
     @Override
     public void initialize() {
         shooter.setSetpoint(5000);

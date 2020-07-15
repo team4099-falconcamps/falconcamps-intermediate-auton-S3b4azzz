@@ -4,7 +4,10 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.can.TalonFX;
 import com.kauailabs.navx.frc.AHRS;
+import com.team4099.falconcamps.commands.ShootCommand;
+
 import edu.wpi.first.wpilibj.SPI;
+import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Drivetrain extends SubsystemBase {
@@ -22,6 +25,9 @@ public class Drivetrain extends SubsystemBase {
         right.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor);
     }
 
+
+    }
+
     public void setLRPower(double leftPower, double rightPower) {
         left.set(ControlMode.PercentOutput, leftPower);
         right.set(ControlMode.PercentOutput, rightPower);
@@ -29,5 +35,6 @@ public class Drivetrain extends SubsystemBase {
 
     public double encoderTicksToMeters(int nativeUnits) {
         return (nativeUnits / (2048 / 0.08665966387)) * 6 * Math.PI;
+
     }
 }
