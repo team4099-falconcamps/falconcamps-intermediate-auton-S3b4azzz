@@ -10,7 +10,7 @@ public class RobotContainer {
     public Shooter shooter = new Shooter();
 
     public RobotContainer() {
-        shooter.setDefaultCommand(ShooterIdleCommand);
+        shooter.setDefaultCommand(ShooterIdleCommand, 0);
     }
 
     public Command getAutonomousCommand() {
