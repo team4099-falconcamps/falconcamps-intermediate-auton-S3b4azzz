@@ -17,9 +17,21 @@ public class Drivetrain extends SubsystemBase {
     private TalonFX rightFollower = new TalonFX(13);
     private AHRS gyro = new AHRS(SPI.Port.kMXP);
 
+public ShooterPIDSubsystem() {
+        double shooterP = 
+        double shooterI =
+        double shooterD = 
+        new PIDController(shooterP, shooterI, shooterD);
+        shooter
+new PIDController(shoooterP)
+}
+
+
+}
     public Drivetrain() {
         leftFollower.follow(left);
         rightFollower.follow(right);
+
 
         left.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor);
         right.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor);
