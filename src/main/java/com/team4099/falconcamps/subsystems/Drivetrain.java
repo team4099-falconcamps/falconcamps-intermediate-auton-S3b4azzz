@@ -18,7 +18,6 @@ public class Drivetrain extends SubsystemBase {
     private TalonFX rightFollower = new TalonFX(13);
     private AHRS gyro = new AHRS(SPI.Port.kMXP);
     public PIDController controller = new PIDController(shooterP, shoooterI, shooterD)
-
 }
     public Drivetrain() {
         leftFollower.follow(left);
@@ -27,6 +26,10 @@ public class Drivetrain extends SubsystemBase {
 
         left.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor);
         right.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor);
+    }
+
+    public double getGyroAngle() {
+        return gyro.getAngle();
     }
 
     public double MeasurementInMetersleft() {
@@ -44,6 +47,8 @@ public class Drivetrain extends SubsystemBase {
 
     public double encoderTicksToMeters(int nativeUnits) {
         return (nativeUnits / (2048 / 0.08665966387)) * 6 * Math.PI;
+
+    }
 
     }
 
