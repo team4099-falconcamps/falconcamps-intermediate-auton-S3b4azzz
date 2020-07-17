@@ -29,6 +29,13 @@ public class Drivetrain extends SubsystemBase {
         right.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor);
     }
 
+    public double MeasurementInMetersleft() {
+        return encoderTicksToMeters(left.getSelectedSensorPosition());
+    }
+    public double MeasurementInMetersRight() {
+        return encoderTicksToMeters(right.getSelectedSensorPosition());
+    }
+
 
     public void setLRPower(double leftPower, double rightPower) {
         left.set(ControlMode.PercentOutput, leftPower);
@@ -39,4 +46,5 @@ public class Drivetrain extends SubsystemBase {
         return (nativeUnits / (2048 / 0.08665966387)) * 6 * Math.PI;
 
     }
+
 }
