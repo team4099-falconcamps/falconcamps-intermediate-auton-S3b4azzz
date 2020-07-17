@@ -7,6 +7,7 @@ import com.kauailabs.navx.frc.AHRS;
 import com.team4099.falconcamps.commands.ShootCommand;
 
 import edu.wpi.first.wpilibj.SPI;
+import edu.wpi.first.wpilibj.controller.PIDController;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
@@ -16,16 +17,7 @@ public class Drivetrain extends SubsystemBase {
     private TalonFX right = new TalonFX(12);
     private TalonFX rightFollower = new TalonFX(13);
     private AHRS gyro = new AHRS(SPI.Port.kMXP);
-
-public ShooterPIDSubsystem() {
-        double shooterP = 
-        double shooterI =
-        double shooterD = 
-        new PIDController(shooterP, shooterI, shooterD);
-        shooter
-new PIDController(shoooterP)
-}
-
+    public PIDController controller = new PIDController(shooterP, shoooterI, shooterD)
 
 }
     public Drivetrain() {
