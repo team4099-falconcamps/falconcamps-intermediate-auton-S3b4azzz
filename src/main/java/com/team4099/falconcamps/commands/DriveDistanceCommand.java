@@ -16,6 +16,7 @@ public class DriveDistanceCommand extends CommandBase {
     public void execute() {
         double calculatePowerleft = controllerleft.calculate(drivetrain.MeasurementInMetersleft(), distanceMeters);
         double calculatePowerright = controllerright.calculate(drivetrain.MeasurementInMetersRight(), distanceMeters);
+        drivetrain.setLRPower(calculatePowerleft, calculatePowerright);
     }
 
 
